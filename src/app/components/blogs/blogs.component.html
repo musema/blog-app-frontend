@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-6">
+  <h2><i class = "fa "></i> Beyond The Blog</h2>
+    </div>
+    <!-- <div class="col-md-6 text-right" style="padding-right:50px">
+        <a routerLink = "blog/add" class= "btn btn-sm"><i class= "btn btn-success btn-block"></i> Create </a>
+    </div> -->
+  </div>
+  <table *ngIf = "blogs?.length > 0;else noBlogs" class = "table table-striped">
+    <thead class= "thead-inverse">
+      <tr>
+
+        <th> ID </th>
+        <th> Description </th>
+        <th>Host</th>
+        <th>Note </th>
+        <th>Start Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let blog of blogs">
+        <td> {{ blog.blogId }}</td>
+        <td> {{ blog.blogDescription }} </td>
+        <td>{{ blog.blogHost }}</td>
+        <td> {{ blog.note }} </td>
+        <td>{{ blog.startTime }}</td>
+        <td><a routerLink = "blog/{{blog.blogId}}" class= "btn btn-secondary btn-sm"><i class= "fa fa-arrow-circle-o-right"></i> Details </a></td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noBlogs>
+    <hr>
+    <h5> There are no blogs in the system </h5>
+  </ng-template>

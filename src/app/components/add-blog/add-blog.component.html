@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink= "/" class= "btn btn-link">
+      <i class= "fa fa-arrow-circle-o-left"> </i>Back to Dashboard
+    </a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Blog
+  </div>
+  <div class="card-body">
+  <form #blogForm ="ngForm" (ngSubmit) ="onSubmit(blogForm)">
+      <div class="form-group">
+          <label for= "blogId"> Blog ID </label>
+          <input
+              type="text"
+              class="form-control"
+              name="blogId"
+              #bId="ngModel"
+              [ngClass]="{'is-invalid':bId.errors && bId.touched}"
+              [(ngModel)]="blog.blogId"
+              minlength= "2"
+              required
+          >
+           <div [hidden]= "!bId.errors?.required" class="invalid-feedback">
+             blog id is required
+           </div>
+           <div [hidden]= "!bId.errors?.minlength" class="invalid-feedback">
+              Must be atleast 2 characters
+          </div>
+          </div>
+      <div class="form-group">
+          <label for= "blogTopic"> Blog Name/Topic </label>
+          <input
+              type="text"
+              class="form-control"
+              name="blogTopic"
+              #bTopic="ngModel"
+              [ngClass]="{'is-invalid':bTopic.errors && bTopic.touched}"
+              [(ngModel)]="blog.blogTopic"
+              minlength= "2"
+              required
+          >
+           <div [hidden]= "!bTopic.errors?.required" class="invalid-feedback">
+             blog topic is  required
+           </div>
+           <div [hidden]= "!bTopic.errors?.minlength" class="invalid-feedback">
+              Must be atleast 2 characters
+          </div>
+          </div>
+          <div class="form-group">
+              <label for= "note"> Note </label>
+              <input
+                  type="text"
+                  class="form-control"
+                  name="note"
+                  #bNote="ngModel"
+                  [ngClass]="{'is-invalid':bNote.errors && bNote.touched}"
+                  [(ngModel)]="blog.note"
+                  minlength= "2"
+                  required
+              >
+               <div [hidden]= "!bNote.errors?.required" class="invalid-feedback">
+                 Note  required
+               </div>
+               <div [hidden]= "!bNote.errors?.minlength" class="invalid-feedback">
+                  Must be atleast 2 characters
+              </div>
+              </div>
+          <div class="form-group">
+              <label for= "blogDescription"> Blog Description </label>
+              <input
+                  type="text"
+                  class="form-control"
+                  name="blogDescription"
+                  #bDescription="ngModel"
+                  [ngClass]="{'is-invalid':bDescription.errors && bDescription.touched}"
+                  [(ngModel)]="blog.blogDescription"
+                  minlength= "2"
+                  required
+              >
+               <div [hidden]= "!bDescription.errors?.required" class="invalid-feedback">
+                 Description name required
+               </div>
+               <div [hidden]= "!bDescription.errors?.minlength" class="invalid-feedback">
+                  Must be atleast 2 characters
+              </div>
+              </div>
+        <div class="form-group">
+            <label for= "blogHost"> Host </label>
+            <input
+                type="text"
+                class="form-control"
+                name="blogHost"
+                #bHost="ngModel"
+                [ngClass]="{'is-invalid':bHost.errors && bHost.touched}"
+                [(ngModel)]="blog.blogHost"
+                minlength= "2"
+                required
+            >
+             <div [hidden]= "!bHost.errors?.required" class="invalid-feedback">
+               Host name required
+             </div>
+             <div [hidden]= "!bHost.errors?.minlength" class="invalid-feedback">
+                Must be atleast 2 characters
+            </div>
+            </div>
+            <input type="submit"  value="submit" class= "btn btn-primary btn-block">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.navbar li.dmi-main-logo a {
+    /* background-image: url(C:\Users\sgottimukkula\Desktop\blogpanel\images\DMI_Logo.svg); */
+    background-size: 200px;
+    background-position: 18px 58%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-indent: -9999px;
+}
